@@ -15,10 +15,7 @@ import Footer from "./components/Footer.vue";
 
 <style scoped>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-@font-face {
-  font-family: 'Manrope';
-  src: url("/css/fonts/Manrope.ttf");
-}
+@font-face {  font-family: 'Manrope';  src: url("/css/fonts/Manrope.ttf"); }
 body {
   font-family: 'Manrope', sans-serif;
   background-color: black;

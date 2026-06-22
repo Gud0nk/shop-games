@@ -17,10 +17,6 @@ const isOpen = ref(false)
             <div class="dropdown-item active">Русский (RU)</div>
             <div class="dropdown-item">English (EN)</div>
           </div>
-          <div class="dropdown-section currencies">
-            <div class="currency-btn active">$</div>
-            <div class="currency-btn">₽</div>
-          </div>
         </div>
       </div>
 
@@ -43,9 +39,9 @@ const isOpen = ref(false)
 
     <div class="header-bottom">
       <div class="logo">
-        <img src="../../public/header/logo.png" alt="">
+        <img style="padding-left: 330px" src="../../public/header/logo.png" alt="">
         <img src="../../public/header/Playnchill.png" alt="">
-        <img style="padding-left: 100px" src="../../public/header/palki.png" alt="">
+        <img style="padding-left: 60px" src="../../public/header/palki.png" alt="">
       </div>
 
       <div class="search-bar">
@@ -55,8 +51,8 @@ const isOpen = ref(false)
 
       <div class="header-actions">
         <span class="free-label">Бесплатно</span>
-        <img src="../../public/header/like.png" alt="">
-        <img src="../../public/header/corzina.png" alt="">
+        <img style="padding-left: 60px" src="../../public/header/like.png" alt="">
+        <img style="padding-right: 348px; padding-left: 25px" src="../../public/header/corzina.png" alt="">
       </div>
     </div>
   </header>
@@ -94,10 +90,12 @@ const isOpen = ref(false)
 }
 
 .nav-link {
-  color: #888;
+  font-family: "Manrope", sans-serif;
+  color: #fff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 16px;
   transition: color 0.2s;
+  padding-top: 20px;
 }
 
 .nav-link:hover {
@@ -118,8 +116,8 @@ const isOpen = ref(false)
 }
 
 .avatar {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
 }
 
@@ -142,7 +140,8 @@ const isOpen = ref(false)
 
 .search-bar {
   flex: 1;
-  max-width: 500px;
+  max-width: 648px;
+  height: 66px;
   display: flex;
   align-items: center;
   background: #1a1a2e;
@@ -180,11 +179,12 @@ const isOpen = ref(false)
 }
 
 .free-label {
-  color: #4caf50;
-  font-size: 13px;
-  font-weight: 600;
+  color: #77BE1D;
+  font-size: 16px;
+  font-weight: 500;
 }
-.lang-currency-label {
-  color: white;
-}
+.lang-currency-label { color: white;font-size: 16px;font-family: 'Manrope', sans-serif; }
+.lang-currency-label:hover { text-shadow: white 1px 0 5px; transition: 0.2s; cursor: pointer; }
+.dropdown-item { font-size: 16px; }
+.dropdown-section { font-size: 16px; }
 </style>
