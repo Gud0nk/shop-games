@@ -7,12 +7,14 @@ const props = defineProps({
 })
 
 const formatPrice = (price) => {
-  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+}
 </script>
 
 <template>
   <div class="game-card">
-    <div class="card-image" :style="{ background: `linear-gradient(135deg, ${game.color}44, ${game.color}22)` }">
+    <div class="card-image">
+      <img :src="game.image" :alt="game.title" class="card-img">
       <div class="card-tag">{{ game.tag }}</div>
       <button class="card-fav">♡</button>
     </div>
@@ -41,6 +43,7 @@ const formatPrice = (price) => {
 .game-card {
   background: #12122a;
   border-radius: 12px;
+  height: 530px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
@@ -54,10 +57,14 @@ const formatPrice = (price) => {
 .card-image {
   height: 280px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card-tag {
@@ -71,6 +78,7 @@ const formatPrice = (price) => {
   font-size: 12px;
   font-weight: 600;
   backdrop-filter: blur(4px);
+  z-index: 1;
 }
 
 .card-fav {
@@ -90,6 +98,7 @@ const formatPrice = (price) => {
   justify-content: center;
   backdrop-filter: blur(4px);
   transition: background 0.2s;
+  z-index: 1;
 }
 
 .card-fav:hover {

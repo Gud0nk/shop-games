@@ -65,7 +65,7 @@ const topGames = ref([
     discount: 15,
     oldPrice: 16400,
     platforms: ['Xbox', 'Origin'],
-    image: '/main/nespe.jpg',
+    image: '/main/Rectangle3313.png',
     tag: 'Топ 1'
   },
   {
@@ -75,7 +75,7 @@ const topGames = ref([
     discount: 15,
     oldPrice: 16400,
     platforms: ['Xbox', 'Analog Steam'],
-    image: '',
+    image: '/main/cart2.png',
     tag: 'Топ 2'
   },
   {
@@ -85,7 +85,7 @@ const topGames = ref([
     discount: 15,
     oldPrice: 16400,
     platforms: ['Analog', 'Analog Steam'],
-    image: 'https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?w=400&h=560&fit=crop',
+    image: '/main/cart3.png',
     tag: 'Топ 3'
   },
   {
@@ -95,7 +95,7 @@ const topGames = ref([
     discount: 15,
     oldPrice: 16400,
     platforms: ['Xbox', 'EpicGames'],
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=560&fit=crop',
+    image: '/main/cart4.png',
     tag: 'Топ 4'
   }
 ])
@@ -159,15 +159,7 @@ const topGames = ref([
 * { font-family: "Manrope", sans-serif }
 .home { padding: 0; background-color: #06030F; }
 
-.hero-banner {
-  margin: 0 auto;
-  padding-bottom: 50px;
-  padding-left: 200px;
-  padding-top: 20px;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-}
+.hero-banner { margin: 0 auto; padding-bottom: 50px;padding-left: 200px;padding-top: 20px;border-radius: 16px;overflow: hidden;position: relative;}
 
 .slider-container {
   position: relative;
