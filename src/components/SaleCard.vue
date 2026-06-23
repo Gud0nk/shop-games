@@ -9,35 +9,18 @@ const props = defineProps({
 const formatPrice = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 }
-
-const getTagColor = (tag) => {
-  if (tag === 'Новинка') return '#4caf50'
-  if (tag === 'Хит продаж') return '#ff6b35'
-  return '#666'
-}
 </script>
 
 <template>
-  <div class="catalog-card">
+  <div class="sale-card">
     <div class="card-image-wrapper">
       <img :src="game.image" :alt="game.title" class="card-image">
-
-      <div v-if="game.tags && game.tags.length" class="card-tags">
-        <span
-            v-for="(tag, idx) in game.tags"
-            :key="idx"
-            class="tag"
-            :style="{ background: getTagColor(tag) }"
-        >
-          {{ tag }}
-        </span>
-      </div>
     </div>
 
     <div class="card-info">
       <div class="card-price-row">
         <span class="card-price">{{ formatPrice(game.price) }} ₽</span>
-        <span class="card-discount">-{{ game.discount }}%</span>
+        <span class="card-discount">{{ game.discount }}%</span>
         <span class="card-old-price">{{ formatPrice(game.oldPrice) }} ₽</span>
       </div>
 
@@ -54,22 +37,21 @@ const getTagColor = (tag) => {
 </template>
 
 <style scoped>
-.catalog-card {
-  background: black;
+.sale-card {
+  background: #1a1a2e;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }
 
-.catalog-card:hover {
+.sale-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
 .card-image-wrapper {
-  position: relative;
-  height: 280px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -78,24 +60,6 @@ const getTagColor = (tag) => {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.card-tags {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  color: #fff;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  backdrop-filter: blur(4px);
 }
 
 .card-info {
@@ -116,7 +80,10 @@ const getTagColor = (tag) => {
 }
 
 .card-discount {
-  color: #4caf50;
+  background: #4caf50;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
   font-size: 12px;
   font-weight: 600;
 }
@@ -139,7 +106,6 @@ const getTagColor = (tag) => {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  font-size: 14px;
 }
 
 .platform {

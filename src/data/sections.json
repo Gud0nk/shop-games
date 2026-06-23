@@ -1,0 +1,94 @@
+{
+  "saleGames": [
+    {
+      "id": 1,
+      "title": "Portal",
+      "price": 16400,
+      "discount": 50,
+      "oldPrice": 16400,
+      "image": "/skidki/skidka1.webp",
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 2,
+      "title": "Elden Ring",
+      "price": 16400,
+      "discount": 50,
+      "oldPrice": 16400,
+      "image": "/skidki/skidka2.webp",
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 3,
+      "title": "Grand Theft Auto V",
+      "price": 16400,
+      "discount": 50,
+      "oldPrice": 16400,
+      "image": "/skidki/skidka3.webp",
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 4,
+      "title": "MecCHA Chameleon",
+      "price": 16400,
+      "discount": 50,
+      "oldPrice": 16400,
+      "image": "/skidki/skidka4.png",
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    }
+  ],
+  "promoBanner": {
+    "id": 1,
+    "image": "/skidki/cocacola.png",
+    "link": "#"
+  },
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Да как так-то борются с пиратством?",
+      "subtitle": "Скайрим — только вернула аккаунта Xbox",
+      "image": "/skidki/cat1.jpg",
+      "date": "14 Октября 2022"
+    },
+    {
+      "id": 2,
+      "title": "Да как так-то борются с пиратством?",
+      "subtitle": "Скайрим — только вернула аккаунта Xbox",
+      "image": "/skidki/cat2.jpg",
+      "date": "14 Октября 2022"
+    },
+    {
+      "id": 3,
+      "title": "Да как так-то борются с пиратством?",
+      "subtitle": "Скайрим — только вернула аккаунта Xbox",
+      "image": "/skidki/dontcat.jpg",
+      "date": "14 Октября 2022"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "rating": 5,
+      "author": "Олег Бочкарев",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+      "date": "7 days ago",
+      "platform": "Playing on PC & Xbox"
+    },
+    {
+      "id": 2,
+      "rating": 5,
+      "author": "Олег Бочкарев",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+      "date": "7 days ago",
+      "platform": "Playing on PC & Xbox"
+    },
+    {
+      "id": 3,
+      "rating": 5,
+      "author": "Олег Бочкарев",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+      "date": "7 days ago",
+      "platform": "Playing on PC & Xbox"
+    }
+  ]
+}

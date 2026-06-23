@@ -147,7 +147,8 @@ const isOpen = ref(false)
   height: 66px;
   display: flex;
   align-items: center;
-  background: #1a1a2e;
+  background: #C4C4C40D;
+  opacity: 30%;
   border-radius: 12px;
   padding: 0 16px;
   border: 1px solid #2d2d44;
