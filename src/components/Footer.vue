@@ -45,8 +45,7 @@
           <div class="badge">
             <div class="badge-icon wm"></div>
             <div class="badge-text">
-              <span class="badge-label">verified</span>
-              <span class="badge-name">WebMoney</span>
+              <img src="../../public/" alt="">
             </div>
           </div>
           <div class="badge">
@@ -58,23 +57,19 @@
           </div>
         </div>
       </div>
-
-      <!-- Disclaimer -->
       <p class="disclaimer">
         Все продаваемые ключи закупаются у официальных дистрибьюторов издателей. В том числе у 1С-СофтКлаб, Бука, Новый Диск и Enaza
       </p>
-
-      <!-- Bottom row -->
       <div class="footer-bottom">
         <a href="#" class="legal-link">Правовая информация</a>
         <span class="copyright">Интернет-магазин игр «Playnchill» © 2022</span>
         <div class="footer-right">
           <span class="lang-currency">RU $</span>
           <div class="social-icons">
-            <a href="#" class="social-icon">VK</a>
-            <a href="#" class="social-icon">TG</a>
-            <a href="#" class="social-icon">TW</a>
-            <a href="#" class="social-icon">IG</a>
+            <img src="../../public/icon/Vector-1.png" alt="">
+            <img src="../../public/icon/Vector-2.png" alt="">
+            <img src="../../public/icon/Vector-3.png" alt="">
+            <img src="../../public/icon/Vector.png" alt="">
           </div>
         </div>
       </div>
