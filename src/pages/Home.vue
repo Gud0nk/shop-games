@@ -1,12 +1,15 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import GameCard from '../components/GameCard.vue'
+import GameCatalogCard from '../components/GameCatalogCard.vue'
 import Slides2 from '../components/Slides2.vue'
 import gamesData from '../data/games.json'
-
+import catalogData from '../data/catalog.json'
 let intervalId = null
 const slides = ref(gamesData.heroSlides)
 const currentSlide = ref(0)
+const topGames = ref(gamesData.topGames)
+const catalogGames = ref(catalogData.catalogGames)
 const nextSlide = () => {currentSlide.value = (currentSlide.value + 1) % slides.value.length}
 const prevSlide = () => {currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length}
 const goToSlide = (index) => {currentSlide.value = index}
@@ -17,7 +20,6 @@ const stopAutoPlay = () => {
     intervalId = null
   }
 }
-const topGames = ref(gamesData.topGames)
 onMounted(() => {startAutoPlay()})
 onUnmounted(() => {stopAutoPlay()})
 </script>
@@ -53,7 +55,7 @@ onUnmounted(() => {stopAutoPlay()})
         </div>
 
         <button class="slider-arrow slider-arrow-left" @click="prevSlide">❮</button>
-        <button class="slider-arrow slider-arrow-right" @click="nextSlide">❯</button>
+        <button class="slider-arrow slider-arrow-right" @click="nextSlide"></button>
 
         <div class="slider-dots">
           <button
@@ -80,6 +82,18 @@ onUnmounted(() => {stopAutoPlay()})
 
     <section class="promo-section">
       <Slides2 />
+    </section>
+
+    <section class="catalog-section">
+      <div class="catalog-grid">
+        <GameCatalogCard
+            v-for="game in catalogGames"
+            :key="game.id"
+            :game="game"
+        />
+      </div>
+
+      <button class="btn-catalog">Перейти в каталог</button>
     </section>
   </div>
 </template>
@@ -309,5 +323,36 @@ onUnmounted(() => {stopAutoPlay()})
   gap: 20px;
   padding-left: 300px;
   padding-right: 300px;
+}
+
+/* Catalog Section */
+.catalog-section {
+  padding: 60px 200px;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.btn-catalog {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-catalog:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 </style>
