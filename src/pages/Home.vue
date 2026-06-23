@@ -1,104 +1,25 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import GameCard from '../components/GameCard.vue'
-
-const slides = ref([
-  {
-    id: 1,
-    title: '#',
-    desc: 'Тотальная война нового поколения началась!<br> Сыграйте в Battlefield 2042 уже сегодня.<br> Адаптируйтесь и процветайте!',
-    price: '4 999 ₽',
-    discount: '-25%',
-    oldPrice: '6 599 ₽',
-    image: '/main/need-for-speed.png'
-  },
-  {
-    id: 2,
-    title: '#',
-    desc: 'Погрузитесь в мир уличных гонок!<br> Тюнинг, погони и свобода на улицах города.',
-    price: '3 499 ₽',
-    discount: '-30%',
-    oldPrice: '4 999 ₽',
-    image: '/main/ned-for-sped.jpg'
-  },
-  {
-    id: 3,
-    title: '#',
-    desc: 'Эпическое приключение в открытом мире!<br> Исследуйте, сражайтесь и становитесь легендой.',
-    price: '2 999 ₽',
-    discount: '-20%',
-    oldPrice: '3 749 ₽',
-    image: '/main/neeedspeeed.jpg'
-  },
-  {
-    id: 4,
-    title: '#',
-    desc: 'Стратегия нового поколения!<br> Постройте свою империю и доминируйте на поле боя.',
-    price: '1 999 ₽',
-    discount: '-15%',
-    oldPrice: '2 349 ₽',
-    image: '/main/nespe.jpg'
-  }
-])
-
+import Slides2 from '../components/Slides2.vue'
+import gamesData from '../data/games.json'
 
 let intervalId = null
+const slides = ref(gamesData.heroSlides)
 const currentSlide = ref(0)
-const nextSlide = () => { currentSlide.value = (currentSlide.value + 1) % slides.value.length }
-const prevSlide = () => { currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length }
-const goToSlide = (index) => { currentSlide.value = index }
-const startAutoPlay = () => { intervalId = setInterval(nextSlide, 3000) }
+const nextSlide = () => {currentSlide.value = (currentSlide.value + 1) % slides.value.length}
+const prevSlide = () => {currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length}
+const goToSlide = (index) => {currentSlide.value = index}
+const startAutoPlay = () => {intervalId = setInterval(nextSlide, 5000)}
 const stopAutoPlay = () => {
   if (intervalId) {
     clearInterval(intervalId)
     intervalId = null
   }
 }
+const topGames = ref(gamesData.topGames)
 onMounted(() => {startAutoPlay()})
 onUnmounted(() => {stopAutoPlay()})
-
-const topGames = ref([
-  {
-    id: 1,
-    title: 'Shape of the World',
-    price: 16400,
-    discount: 15,
-    oldPrice: 16400,
-    platforms: ['Xbox', 'Origin'],
-    image: '/main/Rectangle3313.png',
-    tag: 'Топ 1'
-  },
-  {
-    id: 2,
-    title: 'Journey',
-    price: 16400,
-    discount: 15,
-    oldPrice: 16400,
-    platforms: ['Xbox', 'Analog Steam'],
-    image: '/main/cart2.png',
-    tag: 'Топ 2'
-  },
-  {
-    id: 3,
-    title: 'Minecraft',
-    price: 16400,
-    discount: 15,
-    oldPrice: 16400,
-    platforms: ['Analog', 'Analog Steam'],
-    image: '/main/cart3.png',
-    tag: 'Топ 3'
-  },
-  {
-    id: 4,
-    title: 'Short Hike',
-    price: 16400,
-    discount: 15,
-    oldPrice: 16400,
-    platforms: ['Xbox', 'EpicGames'],
-    image: '/main/cart4.png',
-    tag: 'Топ 4'
-  }
-])
 </script>
 
 <template>
@@ -149,8 +70,16 @@ const topGames = ref([
       <img style="padding-left: 300px;" class="section-title" src="../../public/main/top4.png" alt="">
       <img style="padding-left: 10px;" class="section-title" src="../../public/main/zeus.png" alt="">
       <div class="cards-grid">
-        <GameCard v-for="game in topGames" :key="game.id" :game="game"/>
+        <GameCard
+            v-for="game in topGames"
+            :key="game.id"
+            :game="game"
+        />
       </div>
+    </section>
+
+    <section class="promo-section">
+      <Slides2 />
     </section>
   </div>
 </template>
@@ -159,7 +88,19 @@ const topGames = ref([
 * { font-family: "Manrope", sans-serif }
 .home { padding: 0; background-color: #06030F; }
 
-.hero-banner { margin: 0 auto; padding-bottom: 50px;padding-left: 200px;padding-top: 20px;border-radius: 16px;overflow: hidden;position: relative;}
+.hero-banner {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  padding-left: 200px;
+  padding-top: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.promo-section {
+  padding: 40px 0;
+}
 
 .slider-container {
   position: relative;
@@ -286,6 +227,7 @@ const topGames = ref([
 .btn-favorite:hover {
   background: rgba(255, 255, 255, 0.15);
 }
+
 .slider-arrow {
   position: absolute;
   top: 50%;
@@ -319,7 +261,6 @@ const topGames = ref([
   right: 24px;
 }
 
-/* Индикаторы-точки */
 .slider-dots {
   position: absolute;
   bottom: 24px;

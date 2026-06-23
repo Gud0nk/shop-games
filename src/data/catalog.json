@@ -1,0 +1,124 @@
+{
+  "catalogGames": [
+    {
+      "id": 1,
+      "title": "Flower",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/flower.jpg",
+      "tags": ["Новинка"],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 2,
+      "title": "Minecraft",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/minecraft2.jpg",
+      "tags": ["Хит продаж", "Новинка"],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 3,
+      "title": "Minecraft",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/minecraft3.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 4,
+      "title": "Eastshade",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/eastshade.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 5,
+      "title": "Shape of the World",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/shape.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 6,
+      "title": "Journey",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/journey.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 7,
+      "title": "A Short Hike",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/shorthike.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 8,
+      "title": "Little Big Planet",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/lbp.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 9,
+      "title": "Unravel",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/unravel.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 10,
+      "title": "Seasons after Fall",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/seasons.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 11,
+      "title": "Yonder",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/yonder.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    },
+    {
+      "id": 12,
+      "title": "Minecraft",
+      "price": 16400,
+      "discount": 15,
+      "oldPrice": 16400,
+      "image": "/main/minecraft4.jpg",
+      "tags": [],
+      "platforms": ["Ключ", "Аккаунт Steam"]
+    }
+  ]
+}

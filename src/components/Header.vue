@@ -31,7 +31,7 @@ const isOpen = ref(false)
 
       <div class="header-right">
         <div class="user-profile">
-          <span>Hazard Rules</span>
+          <span>Gud0nk</span>
           <img src="../../public/header/ava.png" alt="avatar" class="avatar" />
         </div>
       </div>
@@ -108,11 +108,14 @@ const isOpen = ref(false)
 }
 
 .user-profile {
+  font-family: "Manrope", sans-serif;
   display: flex;
   align-items: center;
   gap: 8px;
   color: #fff;
-  font-size: 13px;
+  font-size: 16px;
+  padding-top: 20px;
+  padding-right: 60px;
 }
 
 .avatar {
@@ -180,8 +183,9 @@ const isOpen = ref(false)
 
 .free-label {
   color: #77BE1D;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
+  font-family: "Manrope", sans-serif;
 }
 .lang-currency-label { color: white;font-size: 16px;font-family: 'Manrope', sans-serif; }
 .lang-currency-label:hover { text-shadow: white 1px 0 5px; transition: 0.2s; cursor: pointer; }
