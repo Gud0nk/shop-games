@@ -31,7 +31,7 @@ const stars = Array.from({ length: 5 }, (_, i) => i < props.review.rating)
 
 <style scoped>
 .review-card {
-  background: #1a1a2e;
+  background: #06030f;
   border-radius: 12px;
   padding: 20px;
   transition: transform 0.2s;

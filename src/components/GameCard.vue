@@ -15,6 +15,7 @@ const formatPrice = (price) => {
   <div class="game-card">
     <div class="card-image">
       <img :src="game.image" :alt="game.title" class="card-img">
+      <img :src="game.tag" alt="">
       <div class="card-tag">{{ game.tag }}</div>
       <button class="card-fav">♡</button>
     </div>
@@ -35,15 +36,15 @@ const formatPrice = (price) => {
       </div>
     </div>
 
-    <button class="card-btn-cart">В корзину</button>
+
   </div>
 </template>
 
 <style scoped>
 .game-card {
-  background: #12122a;
+  background: #06030f;
   border-radius: 12px;
-  height: 530px;
+  height: 620px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
@@ -55,7 +56,8 @@ const formatPrice = (price) => {
 }
 
 .card-image {
-  height: 280px;
+  width: 300px;
+  height: 450px;
   position: relative;
   overflow: hidden;
 }

@@ -23,7 +23,7 @@ const props = defineProps({
 
 <style scoped>
 .blog-card {
-  background: #1a1a2e;
+  background: #06030f;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;

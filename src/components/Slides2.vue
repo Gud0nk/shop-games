@@ -8,7 +8,6 @@ let intervalId = null
 
 const nextSlide = () => {currentSlide.value = (currentSlide.value + 1) % slides.value.length}
 const prevSlide = () => {currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length}
-const goToSlide = (index) => {currentSlide.value = index}
 const startAutoPlay = () => {intervalId = setInterval(nextSlide, 5000)}
 const stopAutoPlay = () => {
   if (intervalId) {
@@ -50,14 +49,6 @@ onUnmounted(() => {stopAutoPlay()})
       <button class="slider-arrow slider-arrow-left" @click="prevSlide">❮</button>
       <button class="slider-arrow slider-arrow-right" @click="nextSlide">❯</button>
 
-      <div class="slider-dots">
-        <button
-            v-for="(slide, index) in slides"
-            :key="index"
-            :class="['slider-dot', { active: currentSlide === index }]"
-            @click="goToSlide(index)"
-        ></button>
-      </div>
     </div>
   </div>
 </template>
@@ -132,7 +123,7 @@ onUnmounted(() => {stopAutoPlay()})
 }
 
 .price-discount {
-  color: #ffeb3b;
+  color: #FFE817;
   font-size: 16px;
   font-weight: 600;
 }

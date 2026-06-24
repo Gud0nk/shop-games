@@ -11,8 +11,8 @@ const formatPrice = (price) => {
 }
 
 const getTagColor = (tag) => {
-  if (tag === 'Новинка') return '#4caf50'
-  if (tag === 'Хит продаж') return '#ff6b35'
+  if (tag === 'Новинка') return '#FF4C00'
+  if (tag === 'Хид продаж') return '#FF3030'
   return '#666'
 }
 </script>
@@ -55,7 +55,7 @@ const getTagColor = (tag) => {
 
 <style scoped>
 .catalog-card {
-  background: black;
+  background: #06030f;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -69,7 +69,8 @@ const getTagColor = (tag) => {
 
 .card-image-wrapper {
   position: relative;
-  height: 280px;
+  width: 300px;
+  height: 400px;
   overflow: hidden;
 }
 

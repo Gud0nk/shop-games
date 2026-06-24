@@ -40,25 +40,25 @@
   "topGames": [
     {
       "id": 1,
-      "title": "Shape of the World",
+      "title": "XBOX GAME PASS ULTIMATE + EA PLAY 14 JOURS | RENOUVELL...",
       "price": 16400,
       "discount": 15,
       "oldPrice": 16400,
       "platforms": ["Xbox", "Origin"],
       "image": "/main/cart1.png",
-      "tag": "Топ 1",
+      "tag": "Топ 4",
       "color": "#6666ff"
     },
     {
       "id": 2,
-      "title": "Journey",
+      "title": "Minecraft",
       "price": 16400,
       "discount": 15,
       "oldPrice": 16400,
       "platforms": ["Xbox", "Analog Steam"],
       "image": "/main/cart2.png",
-      "tag": "Топ 2",
-      "color": "#ff6666"
+      "tag": "Топ 4",
+      "color": "#06030f"
     },
     {
       "id": 3,
@@ -68,19 +68,19 @@
       "oldPrice": 16400,
       "platforms": ["Analog", "Analog Steam"],
       "image": "/main/cart3.png",
-      "tag": "Топ 3",
-      "color": "#66cc66"
+      "tag": "Топ 4",
+      "color": "#06030f"
     },
     {
       "id": 4,
-      "title": "Short Hike",
+      "title": "Minecraft",
       "price": 16400,
       "discount": 15,
       "oldPrice": 16400,
       "platforms": ["Xbox", "EpicGames"],
       "image": "/main/cart4.png",
       "tag": "Топ 4",
-      "color": "#ffcc66"
+      "color": "#06030f"
     }
   ],
   "promoSlides": [
@@ -91,7 +91,7 @@
       "discount": "-25%",
       "oldPrice": "6 999 ₽",
       "image": "/main/minecraft1.png",
-      "gradient": "linear-gradient(135deg, #66cc33 0%, #99ee44 100%)"
+      "gradient": "linear-gradient(135deg, #1DBE53 0%, #ACE238 100%)"
     },
     {
       "id": 2,
@@ -100,7 +100,7 @@
       "discount": "-25%",
       "oldPrice": "6 999 ₽",
       "image": "/main/minecraft2.png",
-      "gradient": "linear-gradient(135deg, #ff6633 0%, #ff9944 100%)"
+      "gradient": "linear-gradient(135deg, #FF3D23 0%, #FDA828 100%)"
     },
     {
       "id": 3,

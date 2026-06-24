@@ -96,6 +96,13 @@ onUnmounted(() => {stopAutoPlay()})
     </section>
 
     <section class="catalog-section">
+      <div class="catalog-section-two">
+        <p style="color: white;" class="catalog-setting">Новинки</p>
+        <p class="catalog-setting">Аккаунты</p>
+        <p class="catalog-setting">Ключи</p>
+        <p class="catalog-setting">Активация</p>
+        <p class="catalog-setting">Прокачка</p>
+      </div>
       <div class="catalog-grid">
         <GameCatalogCard
             v-for="game in catalogGames"
@@ -182,7 +189,7 @@ onUnmounted(() => {stopAutoPlay()})
 .banner-desc {font-family: 'Manrope', sans-serif;color: #ffffff;font-size: 24px;line-height: 1.6;margin-bottom: 24px;}
 .banner-price-row {display: flex;align-items: baseline;gap: 12px;margin-bottom: 24px;}
 .price-current {font-size: 28px;font-weight: 700;color: #fff;}
-.price-discount {color: #4caf50;font-size: 14px;font-weight: 600;}
+.price-discount {color: #77BE1D;font-size: 14px;font-weight: 600;}
 .price-old {color: #666;font-size: 14px;text-decoration: line-through;}
 .banner-buttons {display: flex;gap: 12px;}
 .btn-cart {background: #fff;color: #0a0a1a;border: none;padding: 12px 32px;border-radius: 8px;font-size: 14px;font-weight: 600;cursor: pointer;transition: all 0.2s;}
@@ -221,36 +228,12 @@ onUnmounted(() => {stopAutoPlay()})
 .reviews-grid {display: grid;grid-template-columns: repeat(3, 1fr);gap: 20px;margin-bottom: 40px;}
 .trustpilot-badge {display: flex;align-items: center;gap: 20px;padding: 24px;background: #1a1a2e;border-radius: 12px;}
 .trustpilot-logo {display: flex;align-items: center;gap: 8px;font-size: 20px;font-weight: 700;color: #fff;}
-.trustpilot-star {
-  color: #4caf50;
-  font-size: 24px;
-}
-
-.trustpilot-info {
-  flex: 1;
-}
-
-.trustpilot-rating {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 4px;
-}
-
-.trustpilot-rating .stars {
-  color: #4caf50;
-  font-size: 18px;
-}
-
-.rating-text {
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.trustpilot-count {
-  font-size: 13px;
-  color: #888;
-  margin: 0;
-}
+.trustpilot-star {color: #4caf50;font-size: 24px;}
+.trustpilot-info {flex: 1;}
+.trustpilot-rating {display: flex;align-items: center;gap: 12px;margin-bottom: 4px;}
+.trustpilot-rating .stars {color: #4caf50;font-size: 18px;}
+.rating-text {font-size: 18px;font-weight: 700;color: #fff;}
+.trustpilot-count {font-size: 13px;color: #888;margin: 0;}
+.catalog-section-two {color: #868686;display: flex;flex-direction: row;}
+.catalog-setting {padding-right: 30px;padding-bottom: 40px;font-size: 20px;}
 </style>

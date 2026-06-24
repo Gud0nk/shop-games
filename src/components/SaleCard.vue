@@ -38,7 +38,8 @@ const formatPrice = (price) => {
 
 <style scoped>
 .sale-card {
-  background: #1a1a2e;
+  height: 440px;
+  background: #06030f;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -51,7 +52,7 @@ const formatPrice = (price) => {
 }
 
 .card-image-wrapper {
-  height: 200px;
+  height: 319px;
   overflow: hidden;
 }
 
