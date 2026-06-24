@@ -9,7 +9,6 @@ import Slides2 from '../components/Slides2.vue'
 import gamesData from '../data/games.json'
 import catalogData from '../data/catalog.json'
 import sectionsData from '../data/sections.json'
-import Footer from '../components/Footer.vue'
 
 let intervalId = null
 const slides = ref(gamesData.heroSlides)
@@ -20,10 +19,8 @@ const saleGames = ref(sectionsData.saleGames)
 const promoBanner = ref(sectionsData.promoBanner)
 const blogPosts = ref(sectionsData.blogPosts)
 const reviews = ref(sectionsData.reviews)
-
 const nextSlide = () => {currentSlide.value = (currentSlide.value + 1) % slides.value.length}
 const prevSlide = () => {currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length}
-const goToSlide = (index) => {currentSlide.value = index}
 const startAutoPlay = () => {intervalId = setInterval(nextSlide, 5000)}
 const stopAutoPlay = () => {
   if (intervalId) {
@@ -64,18 +61,8 @@ onUnmounted(() => {stopAutoPlay()})
             </div>
           </div>
         </div>
-
         <button class="slider-arrow slider-arrow-left" @click="prevSlide">❮</button>
         <button class="slider-arrow slider-arrow-right" @click="nextSlide">❯</button>
-
-        <div class="slider-dots">
-          <button
-              v-for="(slide, index) in slides"
-              :key="index"
-              :class="['slider-dot', { active: currentSlide === index }]"
-              @click="goToSlide(index)"
-          ></button>
-        </div>
       </div>
     </section>
 
@@ -164,7 +151,7 @@ onUnmounted(() => {stopAutoPlay()})
         </div>
         <div class="trustpilot-info">
           <div class="trustpilot-rating">
-            <span class="stars">★★★★★</span>
+            <img src="../../public/main/star.png" alt="">
             <span class="rating-text">Excellent</span>
           </div>
           <p class="trustpilot-count">Based on 22,836 reviews</p>

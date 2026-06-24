@@ -1,18 +1,19 @@
+<script setup>
+//оно тут нахой и не нужно
+</script>
 <template>
   <footer class="footer">
     <div class="footer-container">
-      <!-- Payment logos -->
       <div class="payment-logos">
-        <span class="pay-logo">PayPal</span>
-        <span class="pay-logo">MasterCard</span>
-        <span class="pay-logo">VISA</span>
-        <span class="pay-logo">МИР</span>
-        <span class="pay-logo">WebMoney</span>
-        <span class="pay-logo">PayPal</span>
-        <span class="pay-logo">PayPal</span>
+        <img src="../../public/footer/paypal.png" alt="">
+        <img src="../../public/footer/mastercard%202.png" alt="">
+        <img src="../../public/footer/visa.png" alt="">
+        <img src="../../public/footer/mir.png" alt="">
+        <img src="../../public/footer/webmoney.png" alt="">
+        <img src="../../public/footer/paypal.png" alt="">
+        <img src="../../public/footer/paypal.png" alt="">
       </div>
 
-      <!-- Main columns -->
       <div class="footer-columns">
         <div class="footer-column">
           <h3 class="column-title">О компании</h3>
@@ -43,16 +44,13 @@
 
         <div class="footer-badges">
           <div class="badge">
-            <div class="badge-icon wm"></div>
             <div class="badge-text">
-              <img src="../../public/" alt="">
+              <img src="../../public/footer/web.png" alt="">
             </div>
           </div>
           <div class="badge">
-            <div class="badge-icon google"></div>
             <div class="badge-text">
-              <span class="badge-label">Safe Browsing</span>
-              <span class="badge-name">Google</span>
+              <img src="../../public/footer/safe.png" alt="">
             </div>
           </div>
         </div>
@@ -78,46 +76,11 @@
 </template>
 
 <style scoped>
-.footer {
-  background: #0a0815;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  color: #fff;
-  padding: 40px 0 20px;
-  margin-top: 80px;
-}
-
-.footer-container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 200px;
-}
-
-/* Payment logos */
-.payment-logos {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.pay-logo {
-  font-size: 28px;
-  font-weight: 900;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.25);
-  letter-spacing: 1px;
-}
-
-/* Columns */
-.footer-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) auto;
-  gap: 40px;
-  margin-bottom: 40px;
-  align-items: start;
-}
-
+* { font-family: "Manrope", sans-serif}
+.footer {background: #0a0815;border-top: 1px solid rgba(255, 255, 255, 0.05);color: #fff;padding: 40px 0 20px;}
+.footer-container {max-width: 1500px;margin: 0 auto;padding: 0 200px;}
+.payment-logos {display: flex;gap: 40px;align-items: center;margin-bottom: 40px;flex-wrap: wrap;padding-left: 230px;}
+.footer-columns {display: grid;grid-template-columns: repeat(3, 1fr) auto;gap: 40px;margin-bottom: 40px;align-items: start;}
 .column-title {
   font-size: 16px;
   font-weight: 700;
@@ -145,7 +108,6 @@
   color: #fff;
 }
 
-/* Badges */
 .footer-badges {
   display: flex;
   gap: 20px;
@@ -159,26 +121,6 @@
   background: rgba(255, 255, 255, 0.05);
   padding: 8px 12px;
   border-radius: 8px;
-}
-
-.badge-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 12px;
-  color: #fff;
-}
-
-.badge-icon.wm {
-  background: #0070ba;
-}
-
-.badge-icon.google {
-  background: #4caf50;
 }
 
 .badge-text {
@@ -198,7 +140,6 @@
   color: #fff;
 }
 
-/* Disclaimer */
 .disclaimer {
   font-size: 12px;
   color: #666;
@@ -208,7 +149,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Bottom row */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -247,26 +187,6 @@
 .social-icons {
   display: flex;
   gap: 10px;
-}
-
-.social-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #aaa;
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 700;
-  transition: all 0.2s;
-}
-
-.social-icon:hover {
-  background: #4caf50;
-  color: #fff;
 }
 
 @media (max-width: 1200px) {

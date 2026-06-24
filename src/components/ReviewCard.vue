@@ -5,14 +5,14 @@ const props = defineProps({
     required: true
   }
 })
-const stars = Array.from({ length: 5 }, (_, i) => i < props.review.rating)
+const stars = Array.from({ length: 1 }, (_, i) => i < props.review.rating)
 </script>
 
 <template>
   <div class="review-card">
     <div class="review-header">
       <div class="stars">
-        <span v-for="(star, idx) in stars" :key="idx" class="star">★</span>
+        <span v-for="(star, idx) in stars" :key="idx" class="star"><img src="../../public/main/star.png" alt=""></span>
       </div>
       <span class="review-date">{{ review.date }}</span>
     </div>
