@@ -23,6 +23,7 @@ const promoBanner = ref(sectionsData.promoBanner)
 const blogPosts = ref(sectionsData.blogPosts)
 const reviews = ref(sectionsData.reviews)
 const goToGame = () => {router.push('/game')}
+const goToCatalog = () => {router.push('/catalog')}
 
 const nextSlide = () => {currentSlide.value = (currentSlide.value + 1) % slides.value.length}
 const prevSlide = () => {currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length}
@@ -106,7 +107,7 @@ onUnmounted(() => {stopAutoPlay()})
         />
       </div>
 
-      <button class="btn-catalog">Перейти в каталог</button>
+      <button @click="goToCatalog(1)" class="btn-catalog">Перейти в каталог</button>
     </section>
 
     <section class="sales-section">

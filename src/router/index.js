@@ -2,11 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import gamepage from '../pages/gamepage.vue'
 import corzina from '../pages/corzina.vue'
+import catalog from '../pages/catalog.vue'
 
 const routes = [
   {path: '/', name: 'Home', component: Home},
   {path: '/game', name: 'GamePage', component: gamepage},
-  {path: '/corzina', name: 'corzina', component: corzina}
+  {path: '/corzina', name: 'corzina', component: corzina},
+  {path: '/catalog', name: 'catalog', component: catalog}
 ]
 
 const router = createRouter({

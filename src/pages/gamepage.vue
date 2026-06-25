@@ -184,6 +184,7 @@ const goToGame = (gameId) => {
   background: #06030f;
   min-height: 100vh;
   color: #fff;
+  margin: -10px;
 }
 
 .product-header {
