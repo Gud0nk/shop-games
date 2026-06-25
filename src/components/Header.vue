@@ -5,6 +5,7 @@ const isOpen = ref(false)
 
 const goToCorzina = () => {router.push('/corzina')}
 const goToHome = () => {router.push('/')}
+const goToFreegame = () => {router.push('/freegame')}
 </script>
 
 <template>
@@ -54,7 +55,7 @@ const goToHome = () => {router.push('/')}
       </div>
 
       <div class="header-actions">
-        <span class="free-label">Бесплатно</span>
+        <span @click="goToFreegame" class="free-label">Бесплатно</span>
         <img style="padding-left: 60px" src="../../public/header/like.png" alt="">
         <img @click="goToCorzina" style="padding-right: 348px; padding-left: 25px; cursor: pointer" src="../../public/header/corzina.png" alt="">
       </div>
