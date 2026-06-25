@@ -55,14 +55,22 @@
           </div>
         </div>
       </div>
-      <p class="disclaimer">
-        Все продаваемые ключи закупаются у официальных дистрибьюторов издателей. В том числе у 1С-СофтКлаб, Бука, Новый Диск и Enaza
-      </p>
+      <p class="disclaimer">Все продаваемые ключи закупаются у официальных дистрибьюторов издателей. В том числе у 1С-СофтКлаб, Бука, Новый Диск и Enaza</p>
       <div class="footer-bottom">
         <a href="#" class="legal-link">Правовая информация</a>
         <span class="copyright">Интернет-магазин игр «Playnchill» © 2022</span>
         <div class="footer-right">
-          <span class="lang-currency">RU $</span>
+          <div class="lang-currency" @click="isOpen = !isOpen">
+            <span class="lang-currency-label">RU / $</span>
+            <span class="arrow" :class="{ open: isOpen }">⌄</span>
+          </div>
+
+          <div v-if="isOpen" class="dropdown">
+            <div class="dropdown-section">
+              <div class="dropdown-item active">Русский (RU)</div>
+              <div class="dropdown-item">English (EN)</div>
+            </div>
+          </div>
           <div class="social-icons">
             <img src="../../public/icon/Vector-1.png" alt="">
             <img src="../../public/icon/Vector-2.png" alt="">

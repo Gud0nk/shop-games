@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import GameCard from '../components/GameCard.vue'
 import GameCatalogCard from '../components/GameCatalogCard.vue'
 import SaleCard from '../components/SaleCard.vue'
@@ -10,6 +11,8 @@ import gamesData from '../data/games.json'
 import catalogData from '../data/catalog.json'
 import sectionsData from '../data/sections.json'
 
+const router = useRouter()
+
 let intervalId = null
 const slides = ref(gamesData.heroSlides)
 const currentSlide = ref(0)
@@ -19,6 +22,8 @@ const saleGames = ref(sectionsData.saleGames)
 const promoBanner = ref(sectionsData.promoBanner)
 const blogPosts = ref(sectionsData.blogPosts)
 const reviews = ref(sectionsData.reviews)
+const goToGame = () => {router.push('/game')}
+
 const nextSlide = () => {currentSlide.value = (currentSlide.value + 1) % slides.value.length}
 const prevSlide = () => {currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length}
 const startAutoPlay = () => {intervalId = setInterval(nextSlide, 5000)}
@@ -30,6 +35,7 @@ const stopAutoPlay = () => {
 }
 onMounted(() => {startAutoPlay()})
 onUnmounted(() => {stopAutoPlay()})
+
 </script>
 
 <template>
@@ -53,7 +59,7 @@ onUnmounted(() => {stopAutoPlay()})
                   </div>
 
                   <div class="banner-buttons">
-                    <button class="btn-cart">В корзину</button>
+                    <button class="btn-cart" @click="goToGame(1)">Купить</button>
                     <button class="btn-favorite">В избранное</button>
                   </div>
                 </div>
@@ -72,8 +78,9 @@ onUnmounted(() => {stopAutoPlay()})
       <div class="cards-grid">
         <GameCard
             v-for="game in topGames"
-            :key="game.id"
+            :key="game"
             :game="game"
+            @click="goToGame"
         />
       </div>
     </section>
@@ -95,6 +102,7 @@ onUnmounted(() => {stopAutoPlay()})
             v-for="game in catalogGames"
             :key="game.id"
             :game="game"
+            @click="goToGame"
         />
       </div>
 
@@ -109,6 +117,7 @@ onUnmounted(() => {stopAutoPlay()})
             v-for="game in saleGames"
             :key="game.id"
             :game="game"
+            @click="goToGame(game.id)"
         />
       </div>
 
