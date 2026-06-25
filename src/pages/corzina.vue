@@ -40,8 +40,6 @@ const cartItems = ref([
   }
 ])
 const agreed = ref(false)
-const couponCode = ref('')
-const couponApplied = ref(false)
 const totalItems = computed(() => cartItems.value.length)
 const totalPrice = computed(() => cartItems.value.reduce((sum, item) => sum + item.price * item.quantity, 0))
 const formatPrice = (price) => price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
@@ -246,7 +244,7 @@ const checkout = () => {
 
 .btn-login {
   background: #fff;
-  color: #0a0a1a;
+  color: #06030f;
   border: none;
   padding: 12px 32px;
   border-radius: 10px;
@@ -274,7 +272,7 @@ const checkout = () => {
   gap: 20px;
   align-items: center;
   padding: 20px;
-  background: #12122a;
+  background: #06030f;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -418,14 +416,13 @@ const checkout = () => {
   color: #4caf50;
 }
 
-/* Sidebar */
 .cart-sidebar {
   position: sticky;
   top: 20px;
 }
 
 .summary-card {
-  background: #12122a;
+  background: #06030f;
   border-radius: 16px;
   padding: 32px 24px;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -506,7 +503,7 @@ const checkout = () => {
   display: flex;
   gap: 12px;
   padding: 16px;
-  background: rgba(76, 175, 80, 0.08);
+  background: #06030f;
   border: 1px solid rgba(76, 175, 80, 0.2);
   border-radius: 12px;
   align-items: flex-start;
@@ -515,7 +512,7 @@ const checkout = () => {
 .coupon-icon {
   width: 32px;
   height: 32px;
-  background: rgba(76, 175, 80, 0.2);
+
   border-radius: 8px;
   display: flex;
   align-items: center;

@@ -44,7 +44,7 @@ const goToHome = () => {router.push('/')}
     <div class="header-bottom">
       <div class="logo">
         <img @click="goToHome" style="padding-left: 330px; cursor: pointer;" src="../../public/header/logo.png" alt="">
-        <img @click="goToHome" style="cursor: pointer;" src="../../public/header/Playnchill.png" alt="">
+        <p @click="goToHome" style="cursor: pointer;">Playnchill</p>
         <img style="padding-left: 60px" src="../../public/header/palki.png" alt="">
       </div>
 
@@ -63,6 +63,7 @@ const goToHome = () => {router.push('/')}
 </template>
 
 <style scoped>
+* { font-family: "Manrope", sans-serif}
 .header {
   margin: -10px;
   height: 157px;
