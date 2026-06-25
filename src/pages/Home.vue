@@ -172,7 +172,7 @@ onUnmounted(() => {stopAutoPlay()})
 
 <style scoped>
 * { font-family: "Manrope", sans-serif }
-.home { padding: 0; background-color: #06030F; }
+.home { padding: 0; background-color: #06030F; margin: -10px; }
 .hero-banner {margin: 0 auto;padding-bottom: 50px;padding-left: 200px;padding-top: 20px;border-radius: 16px;overflow: hidden;position: relative;}
 .promo-section {padding: 40px 0;}
 .slider-container {position: relative;width: 1500px;height: 700px;overflow: hidden;border-radius: 16px;}
@@ -196,10 +196,6 @@ onUnmounted(() => {stopAutoPlay()})
 .slider-arrow:hover {background: rgba(0, 0, 0, 0.8);transform: translateY(-50%) scale(1.1);}
 .slider-arrow-left {left: 24px;}
 .slider-arrow-right {right: 24px;}
-.slider-dots {position: absolute;bottom: 24px;left: 50%;transform: translateX(-50%);display: flex;gap: 10px;z-index: 10;}
-.slider-dot {width: 12px;height: 12px;border-radius: 50%;border: 2px solid rgba(255, 255, 255, 0.6);background: transparent;cursor: pointer;transition: all 0.3s;padding: 0;}
-.slider-dot:hover {background: rgba(255, 255, 255, 0.4);}
-.slider-dot.active {background: #fff;border-color: #fff;transform: scale(1.2);}
 .top-section {margin-top: 20px;}
 .section-title {font-size: 24px;font-weight: 700;margin-bottom: 24px;color: #fff;}
 .cards-grid {display: grid;grid-template-columns: repeat(4, 1fr);gap: 20px;padding-left: 300px;padding-right: 300px;}

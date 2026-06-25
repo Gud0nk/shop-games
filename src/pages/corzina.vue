@@ -11,7 +11,7 @@ const cartItems = ref([
     price: 349,
     discount: 25,
     oldPrice: 599,
-    image: '/main/minecraft.jpg',
+    image: '/corzina/minecraft.png',
     region: 'Россия и страны СНГ',
     service: 'Steam',
     quantity: 1
@@ -22,7 +22,7 @@ const cartItems = ref([
     price: 349,
     discount: 25,
     oldPrice: 599,
-    image: '/main/minecraft.jpg',
+    image: '/corzina/minecraft.png',
     region: 'Россия и страны СНГ',
     service: 'Steam',
     quantity: 1
@@ -33,67 +33,23 @@ const cartItems = ref([
     price: 349,
     discount: 25,
     oldPrice: 599,
-    image: '/main/minecraft.jpg',
-    region: 'Россия и страны СНГ',
-    service: 'Steam',
-    quantity: 1
-  },
-  {
-    id: 4,
-    title: 'Minecraft',
-    price: 349,
-    discount: 25,
-    oldPrice: 599,
-    image: '/main/minecraft.jpg',
-    region: 'Россия и страны СНГ',
-    service: 'Steam',
-    quantity: 1
-  },
-  {
-    id: 5,
-    title: 'Minecraft',
-    price: 349,
-    discount: 25,
-    oldPrice: 599,
-    image: '/main/minecraft.jpg',
+    image: '/corzina/minecraft.png',
     region: 'Россия и страны СНГ',
     service: 'Steam',
     quantity: 1
   }
 ])
-
 const agreed = ref(false)
 const couponCode = ref('')
 const couponApplied = ref(false)
-
 const totalItems = computed(() => cartItems.value.length)
-const totalPrice = computed(() =>
-    cartItems.value.reduce((sum, item) => sum + item.price * item.quantity, 0)
-)
-
+const totalPrice = computed(() => cartItems.value.reduce((sum, item) => sum + item.price * item.quantity, 0))
 const formatPrice = (price) => price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
-
-const removeItem = (id) => {
-  cartItems.value = cartItems.value.filter(item => item.id !== id)
-}
-
-const increaseQuantity = (item) => {
-  item.quantity++
-}
-
-const decreaseQuantity = (item) => {
-  if (item.quantity > 1) item.quantity--
-}
-
-const applyCoupon = () => {
-  if (couponCode.value.trim()) {
-    couponApplied.value = true
-  }
-}
-
+const removeItem = (id) => {cartItems.value = cartItems.value.filter(item => item.id !== id)}
+const increaseQuantity = (item) => {item.quantity++}
+const decreaseQuantity = (item) => {if (item.quantity > 1) item.quantity--}
 const checkout = () => {
   if (!agreed.value) return
-  // Логика оформления заказа
   console.log('Checkout')
 }
 
@@ -102,15 +58,12 @@ const checkout = () => {
 <template>
   <div class="cart-page">
     <div class="cart-container">
-      <!-- Header -->
       <div class="cart-header">
         <h1 class="cart-title">Корзина <span class="cart-count">{{ totalItems }}</span></h1>
       </div>
 
       <div class="cart-layout">
-        <!-- Left column -->
         <div class="cart-main">
-          <!-- Login Banner -->
           <div class="login-banner">
             <div class="banner-bg"></div>
             <div class="banner-overlay"></div>
@@ -120,11 +73,10 @@ const checkout = () => {
                 Вы сможете накапливать бонусные рубли<br>
                 и использовать их при оплате до <strong>50% стоимости</strong> товаров.
               </p>
-              <button class="btn-login" @click="goToLogin">Войти</button>
+              <button class="btn-login">Войти</button>
             </div>
           </div>
 
-          <!-- Cart Items -->
           <div class="cart-items">
             <div v-for="item in cartItems" :key="item.id" class="cart-item">
               <div class="item-image-wrapper">
@@ -199,11 +151,13 @@ const checkout = () => {
 </template>
 
 <style scoped>
+* { font-family: "Manrope", sans-serif ;}
 .cart-page {
   background: #06030F;
   min-height: 100vh;
   color: #fff;
   padding: 40px 0 80px;
+  margin: -10px;
 }
 
 .cart-container {
@@ -212,7 +166,6 @@ const checkout = () => {
   padding: 0 200px;
 }
 
-/* Header */
 .cart-header {
   margin-bottom: 32px;
 }
@@ -229,7 +182,6 @@ const checkout = () => {
   font-weight: 900;
 }
 
-/* Layout */
 .cart-layout {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -237,7 +189,6 @@ const checkout = () => {
   align-items: start;
 }
 
-/* Login Banner */
 .login-banner {
   position: relative;
   border-radius: 16px;
@@ -255,7 +206,7 @@ const checkout = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #6a00ff 0%, #ff00aa 50%, #00d4ff 100%);
+  background: url("../../public/corzina/back.png");
   z-index: 1;
 }
 

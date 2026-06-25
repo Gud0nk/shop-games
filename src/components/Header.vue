@@ -4,6 +4,7 @@ import router from "@/router/index.js";
 const isOpen = ref(false)
 
 const goToCorzina = () => {router.push('/corzina')}
+const goToHome = () => {router.push('/')}
 </script>
 
 <template>
@@ -42,8 +43,8 @@ const goToCorzina = () => {router.push('/corzina')}
 
     <div class="header-bottom">
       <div class="logo">
-        <img style="padding-left: 330px" src="../../public/header/logo.png" alt="">
-        <img src="../../public/header/Playnchill.png" alt="">
+        <img @click="goToHome" style="padding-left: 330px; cursor: pointer;" src="../../public/header/logo.png" alt="">
+        <img @click="goToHome" style="cursor: pointer;" src="../../public/header/Playnchill.png" alt="">
         <img style="padding-left: 60px" src="../../public/header/palki.png" alt="">
       </div>
 
@@ -55,15 +56,15 @@ const goToCorzina = () => {router.push('/corzina')}
       <div class="header-actions">
         <span class="free-label">Бесплатно</span>
         <img style="padding-left: 60px" src="../../public/header/like.png" alt="">
-        <img @click="goToCorzina" style="padding-right: 348px; padding-left: 25px" src="../../public/header/corzina.png" alt="">
+        <img @click="goToCorzina" style="padding-right: 348px; padding-left: 25px; cursor: pointer" src="../../public/header/corzina.png" alt="">
       </div>
     </div>
   </header>
 </template>
 
 <style scoped>
-
 .header {
+  margin: -10px;
   height: 157px;
   background-color: #06030F;
   padding: 0 20px;

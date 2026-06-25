@@ -85,78 +85,18 @@
 
 <style scoped>
 * { font-family: "Manrope", sans-serif}
-.footer {background: #0a0815;border-top: 1px solid rgba(255, 255, 255, 0.05);color: #fff;padding: 40px 0 20px;}
+.footer {background: #0a0815;border-top: 1px solid rgba(255, 255, 255, 0.05);color: #fff;padding: 40px 0 20px;margin: -10px;}
 .footer-container {max-width: 1500px;margin: 0 auto;padding: 0 200px;}
 .payment-logos {display: flex;gap: 40px;align-items: center;margin-bottom: 40px;flex-wrap: wrap;padding-left: 230px;}
 .footer-columns {display: grid;grid-template-columns: repeat(3, 1fr) auto;gap: 40px;margin-bottom: 40px;align-items: start;}
-.column-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 20px 0;
-}
-
-.column-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.column-list a {
-  color: #aaa;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s;
-}
-
-.column-list a:hover {
-  color: #fff;
-}
-
-.footer-badges {
-  display: flex;
-  gap: 20px;
-  padding-top: 40px;
-}
-
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 8px 12px;
-  border-radius: 8px;
-}
-
-.badge-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.badge-label {
-  font-size: 11px;
-  color: #888;
-}
-
-.badge-name {
-  font-size: 13px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.disclaimer {
-  font-size: 12px;
-  color: #666;
-  line-height: 1.6;
-  margin: 0 0 30px 0;
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
+.column-title {font-size: 16px;font-weight: 700;color: #fff;margin: 0 0 20px 0;}
+.column-list {list-style: none;padding: 0;margin: 0;display: flex;flex-direction: column;gap: 14px;}
+.column-list a {color: #aaa;text-decoration: none;font-size: 14px;transition: color 0.2s;}
+.column-list a:hover {color: #fff;}
+.footer-badges {display: flex;gap: 20px;padding-top: 40px;}
+.badge {display: flex;align-items: center;gap: 10px;background: rgba(255, 255, 255, 0.05);padding: 8px 12px;border-radius: 8px;}
+.badge-text {display: flex;flex-direction: column;gap: 2px;}
+.disclaimer {font-size: 12px;color: #666;line-height: 1.6;margin: 0 0 30px 0;padding-bottom: 30px;border-bottom: 1px solid rgba(255, 255, 255, 0.05);}
 .footer-bottom {
   display: flex;
   justify-content: space-between;
