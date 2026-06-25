@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
+import router from "@/router/index.js";
 const isOpen = ref(false)
+
+const goToCorzina = () => {router.push('/corzina')}
 </script>
 
 <template>
@@ -52,7 +55,7 @@ const isOpen = ref(false)
       <div class="header-actions">
         <span class="free-label">Бесплатно</span>
         <img style="padding-left: 60px" src="../../public/header/like.png" alt="">
-        <img style="padding-right: 348px; padding-left: 25px" src="../../public/header/corzina.png" alt="">
+        <img @click="goToCorzina" style="padding-right: 348px; padding-left: 25px" src="../../public/header/corzina.png" alt="">
       </div>
     </div>
   </header>

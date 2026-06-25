@@ -1,15 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import GameCard from '../components/GameCard.vue'
+import gamesData from "@/data/games.json";
 
 const router = useRouter()
-
+const topGames = ref(gamesData.topGames)
 const activeTab = ref('description')
-const quantity = ref(1)
-
 const game = ref({
   id: 1,
-  title: 'Squad',
+  title: 'Купить Squad',
   price: 4999,
   oldPrice: 6999,
   discount: 45,
@@ -17,17 +17,15 @@ const game = ref({
   genre: 'Гонки',
   region: 'Страны СНГ',
   type: 'Учетная запись',
-  image: '/main/squad-main.jpg',
+  image: '/gamepage/imgsquad.png',
   features: ['Моментальная доставка', 'Гарантия качества']
 })
-
 const screenshots = ref([
-  { id: 1, src: '/main/squad-1.jpg', alt: 'Screenshot 1' },
-  { id: 2, src: '/main/squad-2.jpg', alt: 'Screenshot 2' },
-  { id: 3, src: '/main/squad-3.jpg', alt: 'Screenshot 3' },
-  { id: 4, src: '/main/squad-4.jpg', alt: 'Screenshot 4', isVideo: true }
+  { id: 1, src: '/gamepage/game4.png', alt: 'Screenshot 1' },
+  { id: 2, src: '/gamepage/game2.png', alt: 'Screenshot 2' },
+  { id: 3, src: '/gamepage/game3.png', alt: 'Screenshot 3' },
+  { id: 4, src: '/gamepage/game1.png', alt: 'Screenshot 4', isVideo: true }
 ])
-
 const description = ref(`
 Погрузитесь в мир уличных гонок нового поколения с Squad! Испытайте адреналин от скоростных заездов по ночному городу, тюнингуйте свои автомобили и станьте легендой улиц.
 
@@ -41,56 +39,9 @@ const description = ref(`
 
 Создайте свой уникальный стиль, участвуйте в нелегальных гонках и зарабатывайте репутацию на улицах города!
 `)
-
-const relatedGames = ref([
-  {
-    id: 1,
-    title: 'Flower',
-    price: 16400,
-    oldPrice: 16400,
-    discount: 15,
-    image: '/main/flower.jpg'
-  },
-  {
-    id: 2,
-    title: 'Homokum',
-    price: 16400,
-    oldPrice: 16400,
-    discount: 15,
-    image: '/main/homokum.jpg'
-  },
-  {
-    id: 3,
-    title: 'Eastshade',
-    price: 16400,
-    oldPrice: 16400,
-    discount: 15,
-    image: '/main/eastshade.jpg'
-  },
-  {
-    id: 4,
-    title: 'Minecraft',
-    price: 16400,
-    oldPrice: 16400,
-    discount: 15,
-    image: '/main/minecraft.jpg'
-  }
-])
-
 const formatPrice = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 }
-
-const buyNow = () => {
-  // Логика покупки
-  console.log('Buy now')
-}
-
-const addToCart = () => {
-  // Добавление в корзину
-  console.log('Add to cart')
-}
-
 const goToGame = (gameId) => {
   router.push(`/game/${gameId}`)
 }
@@ -117,11 +68,8 @@ const goToGame = (gameId) => {
               </div>
 
               <div class="action-buttons">
-                <button class="btn-buy" @click="buyNow">Купить</button>
-                <button class="btn-cart" @click="addToCart">
-                  <span class="cart-icon">🛒</span>
-                  В корзину
-                </button>
+                <button class="btn-buy">Купить</button>
+                <button class="btn-cart" >В корзину</button>
               </div>
             </div>
 
@@ -153,7 +101,6 @@ const goToGame = (gameId) => {
           </div>
         </div>
 
-        <!-- Screenshots Gallery -->
         <div class="screenshots">
           <div v-for="screenshot in screenshots" :key="screenshot.id" class="screenshot-item">
             <img :src="screenshot.src" :alt="screenshot.alt" class="screenshot-img">
@@ -163,7 +110,6 @@ const goToGame = (gameId) => {
       </div>
     </section>
 
-    <!-- Tabs Section -->
     <section class="product-tabs-section">
       <div class="tabs-container">
         <div class="tabs">
@@ -218,47 +164,31 @@ const goToGame = (gameId) => {
       </div>
     </section>
 
-    <!-- Related Products -->
-    <section class="related-products">
-      <div class="related-container">
-        <h2 class="section-title">Вам будет интересно</h2>
-
-        <div class="related-grid">
-          <div
-              v-for="relatedGame in relatedGames"
-              :key="relatedGame.id"
-              class="related-card"
-              @click="goToGame(relatedGame.id)"
-          >
-            <div class="related-image-wrapper">
-              <img :src="relatedGame.image" :alt="relatedGame.title" class="related-image">
-            </div>
-            <div class="related-info">
-              <h3 class="related-title">{{ relatedGame.title }}</h3>
-              <div class="related-price-row">
-                <span class="related-price">{{ formatPrice(relatedGame.price) }} ₽</span>
-                <span class="related-discount">-{{ relatedGame.discount }}%</span>
-                <span class="related-old-price">{{ formatPrice(relatedGame.oldPrice) }} ₽</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="top-section">
+      <h2 style="padding-left: 300px; font-size: 32px;">Вам будет интересно</h2>
+      <div class="cards-grid">
+        <GameCard
+            v-for="game in topGames"
+            :key="game"
+            :game="game"
+            @click="goToGame"
+        />
       </div>
     </section>
   </div>
 </template>
 
 <style scoped>
+* { font-family: "Manrope", sans-serif;}
 .game-page {
-  background: #06030F;
+  background: #06030f;
   min-height: 100vh;
   color: #fff;
 }
 
-/* Product Header */
 .product-header {
-  padding: 40px 200px;
-  background: linear-gradient(180deg, rgba(6, 3, 15, 0.9) 0%, rgba(6, 3, 15, 1) 100%);
+  padding: 40px 300px;
+  background: url("public/background/nedspedback.png");
 }
 
 .product-container {
@@ -277,7 +207,7 @@ const goToGame = (gameId) => {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
 }
 
 .product-image {
@@ -291,7 +221,6 @@ const goToGame = (gameId) => {
   position: absolute;
   top: 16px;
   left: 16px;
-  background: #4caf50;
   color: #fff;
   padding: 6px 16px;
   border-radius: 20px;
@@ -331,7 +260,7 @@ const goToGame = (gameId) => {
 }
 
 .discount {
-  background: #4caf50;
+  background: #77BE1D;
   color: #fff;
   padding: 4px 12px;
   border-radius: 6px;
@@ -352,7 +281,7 @@ const goToGame = (gameId) => {
 
 .btn-buy {
   flex: 1;
-  background: #4caf50;
+  background: #77BE1D;
   color: #fff;
   border: none;
   padding: 16px 32px;
@@ -365,7 +294,7 @@ const goToGame = (gameId) => {
 }
 
 .btn-buy:hover {
-  background: #43a047;
+  background: #77BE1D;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
 }
@@ -449,7 +378,6 @@ const goToGame = (gameId) => {
   font-size: 12px;
 }
 
-/* Screenshots */
 .screenshots {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -497,14 +425,13 @@ const goToGame = (gameId) => {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Tabs Section */
 .product-tabs-section {
   padding: 60px 200px;
 }
 
 .tabs-container {
   max-width: 1500px;
-  margin: 0 auto;
+  margin-right: 100px;
 }
 
 .tabs {
@@ -512,6 +439,7 @@ const goToGame = (gameId) => {
   gap: 40px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 32px;
+  margin-left: 100px;
 }
 
 .tab {
@@ -525,6 +453,7 @@ const goToGame = (gameId) => {
   position: relative;
   transition: color 0.2s;
   font-family: inherit;
+
 }
 
 .tab:hover {
@@ -549,6 +478,7 @@ const goToGame = (gameId) => {
   font-size: 16px;
   line-height: 1.8;
   color: #aaa;
+  padding-left: 100px;
 }
 
 .tab-content h2,
@@ -566,7 +496,6 @@ const goToGame = (gameId) => {
   margin-bottom: 12px;
 }
 
-/* Related Products */
 .related-products {
   padding: 60px 200px 80px;
 }
@@ -652,8 +581,9 @@ const goToGame = (gameId) => {
   font-size: 13px;
   text-decoration: line-through;
 }
+.cards-grid {display: grid;grid-template-columns: repeat(4, 1fr);gap: 20px;padding-left: 300px;padding-right: 300px;}
 
-/* Responsive */
+
 @media (max-width: 1200px) {
   .product-header,
   .product-tabs-section,
