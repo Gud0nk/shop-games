@@ -2,6 +2,8 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const activeTab = ref('giveaway')
+
+// Комментарии
 const comments = ref([
   {
     id: 1,
@@ -18,15 +20,75 @@ const comments = ref([
     author: 'Юлия В.',
     text: 'Первый мой увлажнитель. Хотела ещё приобрести когда родился ребёнок. Наткнулась на акцию и сразу же заказала прочитав про негохорошие отзывы. Стильно выглядит. Лужи под ним не остаётся. За 1,5 часа увлажнил с 33% до 40. Большой объём. Все хорошо было упаковано.'
   }
-])  // это короче комменты, ну по названию и так понятно
+])
 
-let timerInterval = null    // это короче все таймер
+// История розыгрышей
+const giveawayHistory = ref([
+  {
+    id: 1,
+    game: 'Cities in Motion 2',
+    image: '/main/squad-1.jpg',
+    date: '29 апреля 2022',
+    participants: 23,
+    winner: 'Hanzad Whalen',
+    winnerAvatar: '/main/avatar1.jpg'
+  },
+  {
+    id: 2,
+    game: 'Unravel Two',
+    image: '/main/squad-2.jpg',
+    date: '29 апреля 2022',
+    participants: 23,
+    winner: 'Hanzad Whalen',
+    winnerAvatar: '/main/avatar2.jpg'
+  },
+  {
+    id: 3,
+    game: 'Ori',
+    image: '/main/squad-3.jpg',
+    date: '29 апреля 2022',
+    participants: 23,
+    winner: 'Hanzad Whalen',
+    winnerAvatar: '/main/avatar3.jpg'
+  },
+  {
+    id: 4,
+    game: 'Cities in Motion 2',
+    image: '/main/squad-4.jpg',
+    date: '29 апреля 2022',
+    participants: 23,
+    winner: 'Hanzad Whalen',
+    winnerAvatar: '/main/avatar4.jpg'
+  },
+  {
+    id: 5,
+    game: 'Cities in Motion 2',
+    image: '/main/journey.jpg',
+    date: '29 апреля 2022',
+    participants: 23,
+    winner: 'Hanzad Whalen',
+    winnerAvatar: '/main/avatar5.jpg'
+  },
+  {
+    id: 6,
+    game: 'Short Hike',
+    image: '/main/shorthike.jpg',
+    date: '29 апреля 2022',
+    participants: 23,
+    winner: 'Hanzad Whalen',
+    winnerAvatar: '/main/avatar6.jpg'
+  }
+])
+
+// Таймер
+let timerInterval = null
 const timer = ref({
   days: 3,
   hours: 12,
   minutes: 45,
   seconds: 4
 })
+
 const startTimer = () => {
   timerInterval = setInterval(() => {
     timer.value.seconds--
@@ -93,13 +155,12 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
             </div>
           </div>
 
-          <button class="btn-participate" >Участвовать</button>
-
+          <button class="btn-participate">Участвовать</button>
           <button class="btn-share">Поделиться в Facebook</button>
         </div>
 
         <div class="participants-counter">
-          <span class="participants-icon">👤</span>
+          <img src="../../public/person-icon.png" alt="">
           <span class="participants-count">199</span>
         </div>
       </div>
@@ -122,37 +183,62 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
           </button>
         </div>
 
-        <div class="info-block">
-          <h2 class="info-title">Сегодня у каждого есть шанс получить бесплатно ключ<br>от игры Cities in Motion 2</h2>
-          <p class="info-text">
-            Ежедневные <strong>бесплатные раздачи</strong> лицензионных ключей для игр Steam, Origin, Uplay, GOG на Playnchill в 19:00 по МСК
-          </p>
-        </div>
+        <div v-if="activeTab === 'giveaway'" class="tab-content">
+          <div class="info-block">
+            <h2 class="info-title">Сегодня у каждого есть шанс получить бесплатно ключ<br>от игры Cities in Motion 2</h2>
+            <p class="info-text">
+              Ежедневные <strong>бесплатные раздачи</strong> лицензионных ключей для игр Steam, Origin, Uplay, GOG на Playnchill в 19:00 по МСК
+            </p>
+          </div>
 
-        <div class="rules-block">
-          <h3 class="rules-title">Как участвовать в конкурсе</h3>
-          <p class="rules-text">
-            На одной раздаче - один победитель и один приз. Одна раздача игры длится 24 часа. Начало новой раздачи steam игр в 19:00 по Москве. Конкурс ежедневный - шансы выиграть есть у каждого! Победитель выбирается случайно нашим ботом, который честен и непредвзят в любое время года. Бота нельзя подкупить, договориться с ним или понравиться.
-          </p>
-        </div>
-      </div>
-    </section>
+          <div class="rules-block">
+            <h3 class="rules-title">Как участвовать в конкурсе</h3>
+            <p class="rules-text">
+              На одной раздаче - один победитель и один приз. Одна раздача игры длится 24 часа. Начало новой раздачи steam игр в 19:00 по Москве. Конкурс ежедневный - шансы выиграть есть у каждого! Победитель выбирается случайно нашим ботом, который честен и непредвзят в любое время года. Бота нельзя подкупить, договориться с ним или понравиться.
+            </p>
+          </div>
 
-    <section class="comments-section">
-      <div class="comments-container">
-        <h2 class="comments-title">Комментарии <span class="comments-count">24</span></h2>
+          <div class="comments-section">
+            <div class="comments-container">
+              <h2 class="comments-title">Комментарии <span class="comments-count">24</span></h2>
 
-        <div class="comments-list">
-          <div v-for="comment in comments" :key="comment.id" class="comment-item">
-            <div class="comment-header">
-              <div class="comment-avatar"></div>
-              <span class="comment-author">{{ comment.author }}</span>
+              <div class="comments-list">
+                <div v-for="comment in comments" :key="comment.id" class="comment-item">
+                  <div class="comment-header">
+                    <div class="comment-avatar"></div>
+                    <span class="comment-author">{{ comment.author }}</span>
+                  </div>
+                  <p class="comment-text">{{ comment.text }}</p>
+                </div>
+              </div>
+
+              <button class="btn-show-all">Смотреть все</button>
             </div>
-            <p class="comment-text">{{ comment.text }}</p>
           </div>
         </div>
+        
+        <div v-if="activeTab === 'history'" class="tab-content history-content">
+          <div class="history-list">
+            <div v-for="item in giveawayHistory" :key="item.id" class="history-item">
+              <div class="history-image">
+                <img :src="item.image" :alt="item.game">
+              </div>
+              <div class="history-info">
+                <h3 class="history-game">{{ item.game }}</h3>
+                <div class="history-details">
+                  <span class="history-date">Раздан: {{ item.date }}</span>
+                  <span class="history-participants">Участников: {{ item.participants }}</span>
+                </div>
+              </div>
+              <div class="history-winner">
+                <div class="winner-avatar"></div>
+                <span class="winner-name">{{ item.winner }}</span>
+              </div>
+            </div>
+          </div>
 
-        <button class="btn-show-all">Смотреть все</button>
+          <button class="btn-show-all">Смотреть все</button>
+        </div>
       </div>
     </section>
   </div>
@@ -169,7 +255,7 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 
 .hero-banner {
   position: relative;
-  height: 600px;
+  height: 680px;
   overflow: hidden;
 }
 
@@ -274,7 +360,7 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 
 .btn-participate {
   width: 100%;
-  background: #77BE1D 50%;
+  background: #77BE1D;
   color: #fff;
   border: none;
   padding: 16px;
@@ -371,6 +457,12 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
   color: #77BE1D;
 }
 
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .info-block {
   background: linear-gradient(135deg, #DCAD52 0%, #C19C55 100%);
   border-radius: 16px;
@@ -419,9 +511,96 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
   margin: 0;
 }
 
-/* Comments Section */
+.history-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  background: rgba(18, 18, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.history-item:hover {
+  background: rgba(18, 18, 42, 0.8);
+  border-color: rgba(119, 190, 29, 0.3);
+}
+
+.history-image {
+  width: 120px;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.history-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.history-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-game {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.history-details {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  color: #888;
+}
+
+.history-date,
+.history-participants {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.history-winner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.winner-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  border-radius: 50%;
+}
+
+.winner-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #77BE1D;
+}
+
 .comments-section {
-  padding: 60px 200px 80px;
+  padding: 0;
 }
 
 .comments-container {
@@ -501,7 +680,6 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
   border-color: #4caf50;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .hero-content,
   .tabs-section,
@@ -518,6 +696,16 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
     font-size: 24px;
     padding: 12px 16px;
     min-width: 60px;
+  }
+
+  .history-item {
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+
+  .history-winner {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
   }
 }
 
@@ -567,6 +755,24 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 
   .tabs {
     flex-direction: column;
+  }
+
+  .history-item {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .history-image {
+    width: 80px;
+    height: 110px;
+  }
+
+  .history-game {
+    font-size: 16px;
+  }
+
+  .history-details {
+    flex-direction: column;
+    gap: 6px;
   }
 }
 </style>
