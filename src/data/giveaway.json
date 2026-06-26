@@ -1,0 +1,59 @@
+{
+  "freegames": [
+    {
+      "id": 1,
+      "game": "Cities in Motion 2",
+      "image": "/freegame/free.png",
+      "date": "29 апреля 2022",
+      "participants": 23,
+      "winner": "Hanzad Whalen",
+      "winnerAvatar": "/freegame/avatar.jpg"
+    },
+    {
+      "id": 2,
+      "game": "Unravel Two",
+      "image": "/freegame/free2.png",
+      "date": "29 апреля 2022",
+      "participants": 23,
+      "winner": "Hanzad Whalen",
+      "winnerAvatar": "/freegame/avatar.jpg"
+    },
+    {
+      "id": 3,
+      "game": "Ori",
+      "image": "/freegame/free3.png",
+      "date": "29 апреля 2022",
+      "participants": 23,
+      "winner": "Hanzad Whalen",
+      "winnerAvatar": "/freegame/avatar.jpg"
+    },
+    {
+      "id": 4,
+      "game": "Cities in Motion 2",
+      "image": "/freegame/free4.png",
+      "date": "29 апреля 2022",
+      "participants": 23,
+      "winner": "Hanzad Whalen",
+      "winnerAvatar": "/freegame/avatar.jpg"
+    },
+    {
+      "id": 5,
+      "game": "Cities in Motion 2",
+      "image": "/freegame/free5.png",
+      "date": "29 апреля 2022",
+      "participants": 23,
+      "winner": "Hanzad Whalen",
+      "winnerAvatar": "/freegame/avatar.jpg"
+    },
+    {
+      "id": 6,
+      "game": "Short Hike",
+      "image": "/freegame/free6.png",
+      "date": "29 апреля 2022",
+      "participants": 23,
+      "winner": "Hanzad Whalen",
+      "winnerAvatar": "/freegame/avatar.jpg"
+    }
+  ]
+
+}

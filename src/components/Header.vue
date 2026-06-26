@@ -64,6 +64,7 @@ const goToFreegame = () => {router.push('/freegame')}
 </template>
 
 <style scoped>
+
 * { font-family: "Manrope", sans-serif}
 .header {
   margin: -10px;

@@ -1,9 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import freegamesData from '../data/giveaway.json'
 
 const activeTab = ref('giveaway')
-
-// Комментарии
 const comments = ref([
   {
     id: 1,
@@ -21,66 +20,8 @@ const comments = ref([
     text: 'Первый мой увлажнитель. Хотела ещё приобрести когда родился ребёнок. Наткнулась на акцию и сразу же заказала прочитав про негохорошие отзывы. Стильно выглядит. Лужи под ним не остаётся. За 1,5 часа увлажнил с 33% до 40. Большой объём. Все хорошо было упаковано.'
   }
 ])
+const giveawayHistory = ref(freegamesData.freegames)
 
-// История розыгрышей
-const giveawayHistory = ref([
-  {
-    id: 1,
-    game: 'Cities in Motion 2',
-    image: '/main/squad-1.jpg',
-    date: '29 апреля 2022',
-    participants: 23,
-    winner: 'Hanzad Whalen',
-    winnerAvatar: '/main/avatar1.jpg'
-  },
-  {
-    id: 2,
-    game: 'Unravel Two',
-    image: '/main/squad-2.jpg',
-    date: '29 апреля 2022',
-    participants: 23,
-    winner: 'Hanzad Whalen',
-    winnerAvatar: '/main/avatar2.jpg'
-  },
-  {
-    id: 3,
-    game: 'Ori',
-    image: '/main/squad-3.jpg',
-    date: '29 апреля 2022',
-    participants: 23,
-    winner: 'Hanzad Whalen',
-    winnerAvatar: '/main/avatar3.jpg'
-  },
-  {
-    id: 4,
-    game: 'Cities in Motion 2',
-    image: '/main/squad-4.jpg',
-    date: '29 апреля 2022',
-    participants: 23,
-    winner: 'Hanzad Whalen',
-    winnerAvatar: '/main/avatar4.jpg'
-  },
-  {
-    id: 5,
-    game: 'Cities in Motion 2',
-    image: '/main/journey.jpg',
-    date: '29 апреля 2022',
-    participants: 23,
-    winner: 'Hanzad Whalen',
-    winnerAvatar: '/main/avatar5.jpg'
-  },
-  {
-    id: 6,
-    game: 'Short Hike',
-    image: '/main/shorthike.jpg',
-    date: '29 апреля 2022',
-    participants: 23,
-    winner: 'Hanzad Whalen',
-    winnerAvatar: '/main/avatar6.jpg'
-  }
-])
-
-// Таймер
 let timerInterval = null
 const timer = ref({
   days: 3,
@@ -88,7 +29,6 @@ const timer = ref({
   minutes: 45,
   seconds: 4
 })
-
 const startTimer = () => {
   timerInterval = setInterval(() => {
     timer.value.seconds--
@@ -216,7 +156,7 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
             </div>
           </div>
         </div>
-        
+
         <div v-if="activeTab === 'history'" class="tab-content history-content">
           <div class="history-list">
             <div v-for="item in giveawayHistory" :key="item.id" class="history-item">
@@ -231,8 +171,8 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
                 </div>
               </div>
               <div class="history-winner">
-                <div class="winner-avatar"></div>
-                <span class="winner-name">{{ item.winner }}</span>
+                <img class="winner-avatar" :src="item.winnerAvatar" alt="">
+                <span class="winner-name"> <span style="color: white;opacity: 30%; font-size:18px; ">Победитель</span> <br>{{ item.winner }}</span>
               </div>
             </div>
           </div>
@@ -255,7 +195,7 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 
 .hero-banner {
   position: relative;
-  height: 680px;
+  height: 600px;
   overflow: hidden;
 }
 
@@ -584,19 +524,19 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
   display: flex;
   align-items: center;
   gap: 12px;
+  padding-right: 50px;
 }
 
 .winner-avatar {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
 }
 
 .winner-name {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
-  color: #77BE1D;
+  color: white;
 }
 
 .comments-section {
@@ -643,14 +583,14 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 .comment-avatar {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  background: #8F6DEE;
   border-radius: 50%;
 }
 
 .comment-author {
   font-size: 18px;
   font-weight: 700;
-  color: #4caf50;
+  color: #77BE1D;
 }
 
 .comment-text {
@@ -665,7 +605,7 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
   width: 100%;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #4caf50;
+  color: #77BE1D;
   padding: 16px;
   border-radius: 12px;
   font-size: 16px;
@@ -677,7 +617,7 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 
 .btn-show-all:hover {
   background: rgba(76, 175, 80, 0.1);
-  border-color: #4caf50;
+  border-color: #77BE1D;
 }
 
 @media (max-width: 1200px) {
