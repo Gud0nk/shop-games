@@ -193,6 +193,7 @@ const goToFreegame = () => {router.push('/freegame')}
   font-size: 18px;
   font-weight: 500;
   font-family: "Manrope", sans-serif;
+  cursor: pointer;
 }
 .lang-currency-label { color: white;font-size: 16px;font-family: 'Manrope', sans-serif; }
 .lang-currency-label:hover { text-shadow: white 1px 0 5px; transition: 0.2s; cursor: pointer; }

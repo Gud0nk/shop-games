@@ -1,14 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// Таймер обратного отсчета
-const timer = ref({
-  days: 3,
-  hours: 12,
-  minutes: 45,
-  seconds: 4
-})
-
 const activeTab = ref('giveaway')
 const comments = ref([
   {
@@ -26,10 +18,15 @@ const comments = ref([
     author: 'Юлия В.',
     text: 'Первый мой увлажнитель. Хотела ещё приобрести когда родился ребёнок. Наткнулась на акцию и сразу же заказала прочитав про негохорошие отзывы. Стильно выглядит. Лужи под ним не остаётся. За 1,5 часа увлажнил с 33% до 40. Большой объём. Все хорошо было упаковано.'
   }
-])
+])  // это короче комменты, ну по названию и так понятно
 
-let timerInterval = null
-
+let timerInterval = null    // это короче все таймер
+const timer = ref({
+  days: 3,
+  hours: 12,
+  minutes: 45,
+  seconds: 4
+})
 const startTimer = () => {
   timerInterval = setInterval(() => {
     timer.value.seconds--
@@ -228,7 +225,7 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 }
 
 .game-name {
-  color: #4caf50;
+  color: #77BE1D;
   font-weight: 700;
 }
 
@@ -277,7 +274,7 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 
 .btn-participate {
   width: 100%;
-  background: #4caf50;
+  background: #77BE1D 50%;
   color: #fff;
   border: none;
   padding: 16px;
@@ -291,7 +288,6 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 }
 
 .btn-participate:hover {
-  background: #43a047;
   transform: translateY(-2px);
 }
 
@@ -352,9 +348,9 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 
 .tab {
   flex: 1;
-  background: rgba(18, 18, 42, 0.5);
+  background: rgba(76, 175, 80, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #aaa;
+  color: #77BE1D;
   padding: 16px;
   border-radius: 12px;
   font-size: 16px;
@@ -371,8 +367,8 @@ onUnmounted(() => {if (timerInterval) clearInterval(timerInterval)})
 
 .tab.active {
   background: rgba(76, 175, 80, 0.1);
-  border-color: #4caf50;
-  color: #4caf50;
+  border-color: #77BE1D;
+  color: #77BE1D;
 }
 
 .info-block {
