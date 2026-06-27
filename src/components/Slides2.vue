@@ -40,6 +40,7 @@ const baseUrl = import.meta.env.BASE_URL
                 </div>
               </div>
               <div class="card-image">
+                {{ baseUrl }}
                 <img :src="`${baseUrl}${slide.image}`" :alt="slide.title">
               </div>
             </div>
