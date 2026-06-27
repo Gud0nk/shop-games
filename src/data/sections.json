@@ -39,7 +39,7 @@
   ],
   "promoBanner": {
     "id": 1,
-    "image": "/skidki/cocacola.png",
+    "image": "skidki/cocacola.png",
     "link": "#"
   },
   "blogPosts": [

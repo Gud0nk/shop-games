@@ -11,7 +11,7 @@ const cartItems = ref([
     price: 349,
     discount: 25,
     oldPrice: 599,
-    image: '/corzina/minecraft.png',
+    image: 'corzina/minecraft.png',
     region: 'Россия и страны СНГ',
     service: 'Steam',
     quantity: 1
@@ -22,7 +22,7 @@ const cartItems = ref([
     price: 349,
     discount: 25,
     oldPrice: 599,
-    image: '/corzina/minecraft.png',
+    image: 'corzina/minecraft.png',
     region: 'Россия и страны СНГ',
     service: 'Steam',
     quantity: 1
@@ -33,7 +33,7 @@ const cartItems = ref([
     price: 349,
     discount: 25,
     oldPrice: 599,
-    image: '/corzina/minecraft.png',
+    image: 'corzina/minecraft.png',
     region: 'Россия и страны СНГ',
     service: 'Steam',
     quantity: 1
