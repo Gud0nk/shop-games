@@ -90,7 +90,7 @@
       "price": "4 999 ₽",
       "discount": "-25%",
       "oldPrice": "6 999 ₽",
-      "image": "/main/minecraft1.png",
+      "image": "main/minecraft1.png",
       "gradient": "linear-gradient(135deg, #1DBE53 0%, #ACE238 100%)"
     },
     {
@@ -99,7 +99,7 @@
       "price": "4 999 ₽",
       "discount": "-25%",
       "oldPrice": "6 999 ₽",
-      "image": "/main/minecraft2.png",
+      "image": "main/minecraft2.png",
       "gradient": "linear-gradient(135deg, #FF3D23 0%, #FDA828 100%)"
     },
     {

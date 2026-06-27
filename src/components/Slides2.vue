@@ -17,6 +17,7 @@ const stopAutoPlay = () => {
 }
 onMounted(() => {startAutoPlay()})
 onUnmounted(() => {stopAutoPlay()})
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -39,7 +40,7 @@ onUnmounted(() => {stopAutoPlay()})
                 </div>
               </div>
               <div class="card-image">
-                <img :src="`/${slide.image}`" :alt="slide.title">
+                <img :src="`${baseUrl}${slide.image}`" :alt="slide.title">
               </div>
             </div>
           </div>
