@@ -1,20 +1,16 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
-import gamepage from '../pages/gamepage.vue'
-import corzina from '../pages/corzina.vue'
-import catalog from '../pages/catalog.vue'
-import freegame from '../pages/freegame.vue'
 
 const routes = [
   {path: '/', name: 'Home', component: Home},
-  {path: '/game', name: 'GamePage', component: gamepage},
-  {path: '/corzina', name: 'corzina', component: corzina},
-  {path: '/catalog', name: 'catalog', component: catalog},
-  {path: '/freegame', name: 'freegame', component: freegame}
+  {path: '/game', name: 'GamePage', component: () => import('../pages/gamepage.vue')},
+  {path: '/corzina', name: 'corzina', component: () => import('../pages/corzina.vue')},
+  {path: '/catalog', name: 'catalog', component: () => import('../pages/catalog.vue')},
+  {path: '/freegame', name: 'freegame', component: () => import('../pages/freegame.vue')}
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
 
