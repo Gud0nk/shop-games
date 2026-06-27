@@ -9,13 +9,13 @@ const props = defineProps({
 const formatPrice = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 }
-
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
   <div class="sale-card">
     <div class="card-image-wrapper">
-      <img :src="game.image" :alt="game.title" class="card-image">
+      <img :src="`${baseUrl}${game.image}`" :alt="game.title" class="card-image">
     </div>
 
     <div class="card-info">

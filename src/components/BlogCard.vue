@@ -5,12 +5,13 @@ const props = defineProps({
     required: true
   }
 })
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
   <div class="blog-card">
     <div class="card-image-wrapper">
-      <img :src="post.image" :alt="post.title" class="card-image">
+      <img :src="`${baseUrl}${post.image}`" :alt="post.title" class="card-image">
     </div>
 
     <div class="card-info">

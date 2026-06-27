@@ -40,7 +40,6 @@ const baseUrl = import.meta.env.BASE_URL
                 </div>
               </div>
               <div class="card-image">
-                Ghbdtn {{ baseUrl }}
                 <img :src="`${baseUrl}${slide.image}`" :alt="slide.title">
               </div>
             </div>
