@@ -7,7 +7,7 @@
       "price": "4 999 ₽",
       "discount": "-25%",
       "oldPrice": "6 599 ₽",
-      "image": "/main/need-for-speed.png"
+      "image": "main/need-for-speed.png"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "price": "3 499 ₽",
       "discount": "-30%",
       "oldPrice": "4 999 ₽",
-      "image": "/main/ned-for-sped.jpg"
+      "image": "main/ned-for-sped.jpg"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "price": "2 999 ₽",
       "discount": "-20%",
       "oldPrice": "3 749 ₽",
-      "image": "/main/neeedspeeed.jpg"
+      "image": "main/neeedspeeed.jpg"
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "price": "1 999 ₽",
       "discount": "-15%",
       "oldPrice": "2 349 ₽",
-      "image": "/main/nespe.jpg"
+      "image": "main/nespe.jpg"
     }
   ],
   "topGames": [
