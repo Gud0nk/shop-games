@@ -39,7 +39,7 @@ onUnmounted(() => {stopAutoPlay()})
                 </div>
               </div>
               <div class="card-image">
-                <img :src="slide.image" :alt="slide.title">
+                <img :src="`/${slide.image}`" :alt="slide.title">
               </div>
             </div>
           </div>
