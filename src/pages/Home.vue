@@ -36,7 +36,7 @@ const stopAutoPlay = () => {
 }
 onMounted(() => {startAutoPlay()})
 onUnmounted(() => {stopAutoPlay()})
-
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -123,7 +123,7 @@ onUnmounted(() => {stopAutoPlay()})
       </div>
 
       <div class="promo-banner">
-        <img :src="promoBanner.image" alt="Promo">
+        <img :src="`${baseUrl}${promoBanner.image}`" alt="Promo">
       </div>
     </section>
 
