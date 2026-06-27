@@ -4,7 +4,7 @@ import router from "@/router/index.js";
 const isOpen = ref(false)
 
 const goToCorzina = () => {router.push('/corzina')}
-const goToHome = () => {router.push('/')}
+const goToHome = () => {router.push('/home')}
 const goToFreegame = () => {router.push('/freegame')}
 </script>
 
