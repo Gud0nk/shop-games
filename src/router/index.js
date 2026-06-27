@@ -6,7 +6,7 @@ import catalog from '../pages/catalog.vue'
 import freegame from '../pages/freegame.vue'
 
 const routes = [
-  {path: '/home', name: 'Home', component: Home},
+  {path: '/', name: 'Home', component: Home},
   {path: '/game', name: 'GamePage', component: gamepage},
   {path: '/corzina', name: 'corzina', component: corzina},
   {path: '/catalog', name: 'catalog', component: catalog},

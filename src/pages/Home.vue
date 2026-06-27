@@ -229,4 +229,183 @@ const baseUrl = import.meta.env.BASE_URL
 .trustpilot-count {font-size: 13px;color: #888;margin: 0;}
 .catalog-section-two {color: #868686;display: flex;flex-direction: row;}
 .catalog-setting {padding-right: 30px;padding-bottom: 40px;font-size: 20px;}
+@media (max-width: 1200px) {
+  .slider-container {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .cards-grid,
+  .catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-banner {
+    padding: 15px 15px 40px;
+  }
+
+  .banner-bg {
+    padding: 30px;
+  }
+
+  .banner-desc {
+    font-size: 16px;
+  }
+
+  .cards-grid,
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sales-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .banner-bg {
+    padding: 20px;
+  }
+
+  .banner-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-cart,
+  .btn-favorite {
+    width: 100%;
+    text-align: center;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cards-grid,
+  .catalog-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-section-two {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 10px;
+  }
+
+  .catalog-setting {
+    flex-shrink: 0;
+  }
+
+  .reviews-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reviews-header .section-heading {
+    text-align: left;
+  }
+
+  .trustpilot-badge {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trustpilot-info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    margin: 0;
+  }
+
+  .hero-banner {
+    padding: 10px 10px 30px;
+    border-radius: 0;
+  }
+
+  .slider-container {
+    border-radius: 0;
+    height: 40vh;
+    min-height: 250px;
+  }
+
+  .banner-title {
+    font-size: 24px;
+  }
+
+  .banner-desc {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .banner-price-row {
+    margin-bottom: 16px;
+  }
+
+  .price-current {
+    font-size: 20px;
+  }
+
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .cards-grid,
+  .catalog-grid,
+  .sales-grid,
+  .blog-grid,
+  .reviews-grid {
+    gap: 15px;
+  }
+
+  .btn-cart,
+  .btn-favorite,
+  .btn-catalog,
+  .btn-blog,
+  .btn-leave-review {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 375px) {
+  .banner-title {
+    font-size: 20px;
+  }
+
+  .banner-desc {
+    font-size: 13px;
+  }
+
+  .section-heading {
+    font-size: 18px;
+  }
+}
 </style>
