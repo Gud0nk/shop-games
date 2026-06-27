@@ -50,7 +50,7 @@ const checkout = () => {
   if (!agreed.value) return
   console.log('Checkout')
 }
-
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -78,7 +78,7 @@ const checkout = () => {
           <div class="cart-items">
             <div v-for="item in cartItems" :key="item.id" class="cart-item">
               <div class="item-image-wrapper">
-                <img :src="item.image" :alt="item.title" class="item-image">
+                <img :src="`${baseUrl}${item.image}`" :alt="item.title" class="item-image">
               </div>
 
               <div class="item-info">
