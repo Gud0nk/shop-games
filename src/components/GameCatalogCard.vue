@@ -15,12 +15,13 @@ const getTagColor = (tag) => {
   if (tag === 'Хид продаж') return '#FF3030'
   return '#666'
 }
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
   <div class="catalog-card">
     <div class="card-image-wrapper">
-      <img :src="game.image" :alt="game.title" class="card-image">
+      <img :src="`${baseUrl}${game.image}`" :alt="game.title" class="card-image">
 
       <div v-if="game.tags && game.tags.length" class="card-tags">
         <span

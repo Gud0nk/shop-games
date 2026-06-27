@@ -6,7 +6,7 @@
       "price": 16400,
       "discount": 15,
       "oldPrice": 16400,
-      "image": "/catalog/ctlg1.png",
+      "image": "catalog/ctlg1.png",
       "tags": ["Новинка"],
       "platforms": ["Ключ", "Аккаунт Steam"]
     },
@@ -16,7 +16,7 @@
       "price": 16400,
       "discount": 15,
       "oldPrice": 16400,
-      "image": "/catalog/ctlg2.png",
+      "image": "catalog/ctlg2.png",
       "tags": ["Хид продаж", "Новинка"],
       "platforms": ["Ключ", "Аккаунт Steam"]
     },
@@ -26,7 +26,7 @@
       "price": 16400,
       "discount": 15,
       "oldPrice": 16400,
-      "image": "/catalog/ctlg3.png",
+      "image": "catalog/ctlg3.png",
       "tags": [],
       "platforms": ["Ключ", "Аккаунт Steam"]
     },
@@ -36,7 +36,7 @@
       "price": 16400,
       "discount": 15,
       "oldPrice": 16400,
-      "image": "/catalog/ctlg4.png",
+      "image": "catalog/ctlg4.png",
       "tags": [],
       "platforms": ["Ключ", "Аккаунт Steam"]
     },
